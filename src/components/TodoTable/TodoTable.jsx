@@ -1,16 +1,7 @@
 import './TodoTable.css';
-import { useEffect, useState } from 'react';
-import {Todo} from '../Todo/Todo';
-import axios from 'axios';
+import { Todo } from '../Todo/Todo';
 
-export const TodoTable = () => {
-
-    const [todos, setTodos] = useState([]);
-
-    useEffect(() => {
-        axios.get('http://localhost:3001/todos')
-            .then(res => setTodos(res.data))
-    }, [])
+export const TodoTable = ({ todos, setTodos }) => {
 
     return (
         <table className={'todo-table'}>
@@ -24,7 +15,7 @@ export const TodoTable = () => {
             </thead>
             <tbody>
                 {todos.map((todo) => (
-                    <Todo key={todo.id} todo={todo}/>
+                    <Todo key={todo.id} todo={todo} />
                 ))}
             </tbody>
         </table>

@@ -1,12 +1,13 @@
 import './App.css';
 import { Header } from '../Header/Header';
-import { TodoTable } from '../TodoTable/TodoTable';
+import { TodoContainer } from '../TodoContainer/TodoContainer';
+
 
 const App = () => {
     return (
         <>
             <Header />
-            <TodoTable />
+            <TodoContainer />
         </>
     )
 }
