@@ -1,0 +1,22 @@
+{
+    "todos": [
+      {
+        "id": 1,
+        "name": "HTML is easy",
+        "description": "HTML is easy description",
+        "completed": true
+      },
+      {
+        "id": 2,
+        "name": "Browser can execute only JavaScript",
+        "description": "Browser can execute only JavaScript description",
+        "completed": false
+      },
+      {
+        "id": 3,
+        "name": "GET and POST are the most important methods of HTTP protocol",
+        "description": "GET and POST are the most important methods of HTTP protocol description",
+        "completed": true
+      }
+    ]
+  }
