@@ -1,15 +1,15 @@
 import './TodoTable.css';
 import { useEffect, useState } from 'react';
 import {Todo} from '../Todo/Todo';
+import axios from 'axios';
 
 export const TodoTable = () => {
 
     const [todos, setTodos] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:3001/todos')
-            .then(res => res.json())
-            .then(json => setTodos(json))
+        axios.get('http://localhost:3001/todos')
+            .then(res => setTodos(res.data))
     }, [])
 
     return (
@@ -23,7 +23,9 @@ export const TodoTable = () => {
                 </tr>
             </thead>
             <tbody>
-                <Todo todo={todos[0]}/>
+                {todos.map((todo) => (
+                    <Todo key={todo.id} todo={todo}/>
+                ))}
             </tbody>
         </table>
     )
